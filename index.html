@@ -24,11 +24,9 @@
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <style>
-/* Titles: Canela Text (Alex's talk font). Canela is licensed (Commercial Type): it shows where installed,
-   everyone else sees the free Newsreader (SIL Open Font License) shipped in assets/fonts. See DEPLOY.md to add a web license. */
-@font-face{font-family:"Canela Site";src:local("Canela Text Bold"),local("CanelaText-Bold"),local("Canela Bold"),local("Canela-Bold");font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:"Canela Site";src:local("Canela Text Bold Italic"),local("CanelaText-BoldItalic"),local("Canela Bold Italic"),local("Canela-BoldItalic");font-weight:700;font-style:italic;font-display:swap}
-@font-face{font-family:"Canela Site";src:local("Canela Text Regular"),local("CanelaText-Regular"),local("Canela Regular"),local("Canela-Regular");font-weight:400;font-style:normal;font-display:swap}
+/* Titles: Canela Bold (Commercial Type), served from Alex's web license (assets/fonts/canela-bold-web.woff2).
+   Italics and any missing glyphs use the free Newsreader (SIL Open Font License), also in assets/fonts. */
+@font-face{font-family:"Canela Site";src:url(assets/fonts/canela-bold-web.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:"Newsreader Site";src:url(assets/fonts/newsreader.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
 @font-face{font-family:"Newsreader Site";src:url(assets/fonts/newsreader-i.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
 
@@ -43,7 +41,8 @@
      The two research themes: coral = stressors, blue = multispecies communities.
      Emphasis without meaning is cream italic. Everything else is neutral. */
   --stress:var(--coral); --comm:var(--blue);
-  --f-title:"Canela Site","Canela Text","Canela","Newsreader Site",Georgia,"Times New Roman",serif;
+  --f-title:"Canela Site","Newsreader Site",Georgia,"Times New Roman",serif;
+  --f-title-italic:"Newsreader Site",Georgia,"Times New Roman",serif;
   --f-body:"Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
   --maxw:1180px; --gutter:clamp(16px,4vw,40px); --radius:8px;
   color-scheme:dark;
@@ -58,8 +57,10 @@ strong,b{font-weight:500;color:var(--ink)}
 a{color:var(--ink);text-decoration-color:#5C666A;text-decoration-thickness:1px;text-underline-offset:3px}
 a:hover{color:var(--cream);text-decoration-color:var(--cream)}
 h1 em,h2 em,h3 em{font-style:italic;color:var(--cream)}
+/* the Canela web license covers Bold only, so italics in titles use Newsreader Bold Italic */
+:is(h1,h2,h3,h4,.theme-title,.m-name,.pub-num) :is(em,i){font-family:var(--f-title-italic)}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
-h1,h2,h3{font-family:var(--f-title);font-weight:700;color:var(--ink);line-height:1.08;letter-spacing:-.01em;text-wrap:pretty;margin:0}
+h1,h2,h3{font-family:var(--f-title);font-weight:700;color:var(--ink);line-height:1.08;letter-spacing:.005em;word-spacing:.06em;text-wrap:pretty;margin:0}
 p{margin:0}
 .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
 .k-life{color:var(--live)} .k-death{color:var(--dead)}
@@ -138,7 +139,7 @@ p{margin:0}
 .hero-inner{max-width:1000px;margin-inline:auto;padding-inline:var(--gutter);display:grid;justify-items:center;gap:1.5rem;text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 22px rgba(0,0,0,.85)}
 .hero .eyebrow b{font-weight:500;color:var(--ink)}
 .hero .eyebrow{color:var(--soft)}
-.hero h1{font-size:clamp(1.85rem,7.6vw,4.6rem);line-height:1.04;letter-spacing:-.015em}
+.hero h1{font-size:clamp(1.75rem,7.6vw,4.6rem);line-height:1.04;letter-spacing:0}
 .hero h1 .ln{display:block;white-space:nowrap}
 .hero h1 em{font-style:italic;font-weight:700;color:var(--cream)}
 .lede{font-weight:300;font-size:clamp(1.05rem,1.5vw,1.22rem);line-height:1.65;color:#E6EBEC;max-width:42em}
