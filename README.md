@@ -4,7 +4,6 @@ Static website of the Calvo Lab (Department of Systems Biology, CNB-CSIC, Madrid
 
 - `index.html` is the whole site; the cartoons are drawn inline as SVG.
 - `assets/` holds the images, videos, favicon, and the free fallback font (Source Serif 4, SIL Open Font License).
-- `.nojekyll` tells GitHub Pages to serve the files as they are.
 
 To update a text, edit `index.html` on github.com (pencil icon) and commit; the live site refreshes within a minute or two.
 
