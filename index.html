@@ -24,9 +24,10 @@
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <style>
-/* Titles: Canela Bold (Commercial Type), served from Alex's web license (assets/fonts/canela-bold-web.woff2).
-   Italics and any missing glyphs use the free Newsreader (SIL Open Font License), also in assets/fonts. */
+/* Titles: Canela Bold and Bold Italic (Commercial Type), served from Alex's web license (assets/fonts/canela-*-web.woff2).
+   Any missing glyphs fall back to the free Newsreader (SIL Open Font License), also in assets/fonts. */
 @font-face{font-family:"Canela Site";src:url(assets/fonts/canela-bold-web.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Canela Site";src:url(assets/fonts/canela-bolditalic-web.woff2) format("woff2");font-weight:700;font-style:italic;font-display:swap}
 @font-face{font-family:"Newsreader Site";src:url(assets/fonts/newsreader.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
 @font-face{font-family:"Newsreader Site";src:url(assets/fonts/newsreader-i.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
 
@@ -42,7 +43,7 @@
      Emphasis without meaning is cream italic. Everything else is neutral. */
   --stress:var(--coral); --comm:var(--blue);
   --f-title:"Canela Site","Newsreader Site",Georgia,"Times New Roman",serif;
-  --f-title-italic:"Newsreader Site",Georgia,"Times New Roman",serif;
+  --f-title-italic:"Canela Site","Newsreader Site",Georgia,"Times New Roman",serif;
   --f-body:"Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
   --maxw:1180px; --gutter:clamp(16px,4vw,40px); --radius:8px;
   color-scheme:dark;
@@ -57,7 +58,7 @@ strong,b{font-weight:500;color:var(--ink)}
 a{color:var(--ink);text-decoration-color:#5C666A;text-decoration-thickness:1px;text-underline-offset:3px}
 a:hover{color:var(--cream);text-decoration-color:var(--cream)}
 h1 em,h2 em,h3 em{font-style:italic;color:var(--cream)}
-/* the Canela web license covers Bold only, so italics in titles use Newsreader Bold Italic */
+/* titles: Canela Bold and Bold Italic (web license); Newsreader covers anything missing */
 :is(h1,h2,h3,h4,.theme-title,.m-name,.pub-num) :is(em,i){font-family:var(--f-title-italic)}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
 h1,h2,h3{font-family:var(--f-title);font-weight:700;color:var(--ink);line-height:1.08;letter-spacing:.005em;word-spacing:.06em;text-wrap:pretty;margin:0}
